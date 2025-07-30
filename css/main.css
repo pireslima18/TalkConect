@@ -1,7 +1,12 @@
 html, body {
   padding: 0;
   margin: 0;
-  text-decoration: none;
+  a{
+    text-decoration: none;
+  }
+  p {
+    margin: 0;
+  }
   /* background-color: aqua; */
 }
 
@@ -50,4 +55,96 @@ nav{
 /* HEADER */
 .section-header{
   margin-top: 70px;
+  background-color: #455EB5;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  margin: 0;
+
+  .section-header-apresentation-1 {
+    color: rgb(99, 99, 99);
+    margin: 0;
+    font-size: 1em;
+  }
+  .section-header-apresentation-2 {
+    color: rgb(25, 25, 25);
+    font-size: 5em;
+    margin: 15px 0;
+  }
+  .section-header-apresentation-3 {
+    color: rgb(99, 99, 99);
+    margin: 0;
+    font-size: 1.2em;
+  }
+}
+/* HEADER */
+.section-motivo{
+  margin-top: 70px;
+  background-color: #45b54b;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 20px 0 20px 10%;
+
+  .section-motivo-apresentation{
+    width: 30%;
+    .section-motivo-apresentation-1 {
+      color: rgb(99, 99, 99);
+      margin: 0;
+      font-size: 1em;
+    }
+    .section-motivo-apresentation-2 {
+      color: rgb(25, 25, 25);
+      font-size: 5em;
+      margin: 15px 0;
+      line-height: 75px;
+    }
+    .section-motivo-apresentation-3 {
+      color: rgb(99, 99, 99);
+      margin: 0;
+      font-size: 1.2em;
+    }
+  }
+  .section-motivo-quadro{
+    width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+
+    .section-motivo-quadro-item{
+      width: 48%;
+      max-width: 220px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      padding: 30px;
+      border-radius: 7px;
+      margin: 13px;
+
+      .section-motivo-quadro-item-icon{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #455EB5;
+        width: 60px;
+        height: 60px;
+        border-radius: 7px;
+        margin-bottom: 14px;
+        i{
+          font-size: 1.7em;
+        }
+      }
+
+      p{
+        text-align: center;
+      }
+    }
+  }
 }
