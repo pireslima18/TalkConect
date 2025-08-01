@@ -373,11 +373,11 @@ nav{
 /* SECTION IDENTIFICAÇÃO */
 .section-identificacao{
   background-color: rgba(234, 234, 234, 0.388);
-  padding: 0 10% 100px 10%;
-
+  margin-bottom: 100px;
   .section-identificacao-content{
 
     .section-identificacao-content-header{
+      padding: 0 0 100px 10%;
       .section-identificacao-content-header-title{
         max-width: 450px;
         font-size: 3em;
@@ -391,6 +391,35 @@ nav{
         line-height: 25px;
         color: rgb(99, 99, 99);
         margin: 30px 0;
+      }
+    }
+    .section-identificacao-content-list{
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+
+      .section-identificacao-content-list-item {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: end;
+        width: 25%;
+        height: 500px;
+        background-color: #455EB5;
+        border-radius: 6px;
+        color: white;
+        padding: 0 20px 20px 20px;
+
+        .section-identificacao-content-list-item-title{
+          font-size: 1.6em;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+        .section-identificacao-content-list-item-text{
+          font-size: 1em;
+          font-weight: bold;
+          margin-bottom: 20px;
+          line-height: 25px;
+        }
       }
     }
   }
