@@ -1,4 +1,5 @@
 html, body {
+  font-family: "Rubik", sans-serif;
   padding: 0;
   margin: 0;
   a{
@@ -7,6 +8,10 @@ html, body {
   p {
     margin: 0;
   }
+}
+
+.text-color {
+  color: #c22f4a;
 }
 
 /* NAVBAR */
@@ -31,24 +36,19 @@ nav{
       }
     }
     .navbar-container-options-botao{
-      background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
-      border-radius: 8px;
-      border-style: none;
-      box-sizing: border-box;
-      color: #FFFFFF;
+      background-color: #c22f4a;
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 11px;
       cursor: pointer;
-      flex-shrink: 0;
-      font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
       font-size: 16px;
       font-weight: 500;
-      height: 4rem;
-      padding: 12px 1.6rem;
       text-align: center;
       text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-      transition: all .5s;
       user-select: none;
       -webkit-user-select: none;
-      touch-action: manipulation;
+      font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
     }
   }
 }
@@ -62,7 +62,6 @@ nav{
   justify-content: center;
   padding: 0 10%;
 
-
   .section-header-apresentation{
     height: 100%;
     display: flex;
@@ -75,13 +74,14 @@ nav{
 
   .section-header-apresentation-1 {
     color: rgb(99, 99, 99);
-    margin: 0;
-    font-size: 1em;
+    margin: 0 0 0 10px;
+    font-size: 0.9em;
   }
   .section-header-apresentation-2 {
     color: rgb(25, 25, 25);
-    font-size: 5em;
-    margin: 15px 0;
+    font-size: 3em;
+    margin: 8px 0;
+    max-width: 700px;
   }
   .section-header-apresentation-3 {
     color: rgb(99, 99, 99);
@@ -90,24 +90,20 @@ nav{
   }
   .section-header-apresentation-4 {
     margin-top: 20px;
-    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
+    background-color: #c22f4a;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 11px;
     cursor: pointer;
-    flex-shrink: 0;
-    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
     font-size: 16px;
     font-weight: 500;
-    height: 40px;
-    padding: 10px 1.6rem;
     text-align: center;
     text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-    transition: all .5s;
     user-select: none;
     -webkit-user-select: none;
-    touch-action: manipulation;
+    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    border: none;
   }
 }
 /* MOTIVO */
@@ -179,7 +175,7 @@ nav{
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        background-color: #455EB5;
+        background-color: #c22f4a;
         width: 60px;
         height: 60px;
         border-radius: 7px;
@@ -222,6 +218,11 @@ nav{
       line-height: 30px;
       color: rgb(39, 39, 39);
       font-size: 1.2em;
+
+      p{
+        margin-bottom: 10px;
+        text-indent: 20px;
+      }
     }
   }
 }
@@ -248,13 +249,15 @@ nav{
         text-align: center;
       }
       .section-servicos-content-title{
-        font-size: 3em;
+        font-size: 2.5em;
+        font-weight: bold;
       }
       .section-servicos-content-text-1{
         margin: 18px 0;
         font-size: 1.2em;
         font-weight: 400;
-        color: rgb(49, 49, 49);
+        color: #9e021e;
+        font-weight: bold;
       }
       .section-servicos-content-text-2{
         font-size: 1.2em;
@@ -262,6 +265,7 @@ nav{
         color: rgb(49, 49, 49);
         line-height: 25px;
         max-width: 600px;
+        width: 100%;
       }
     }
 
@@ -304,6 +308,8 @@ nav{
             font-size: 1.52em;
             font-weight: bold;
             margin-bottom: 20px;
+            text-decoration: underline;
+            text-decoration-color: #c405287a;
           }
           .section-servicos-content-info-item-detail-text{
             font-size: 1.1em;
@@ -684,7 +690,7 @@ footer{
 
   /* SEÇÃO HEADER */
   .section-header {
-    height: 300px;
+    height: 200px;
     .section-header-apresentation {
       height: 100%;
 
@@ -694,11 +700,11 @@ footer{
       font-size: 0.7em;
     }
     .section-header-apresentation-2{
-      font-size: 3.3em;
+      font-size: 1.8em;
       margin: 4px 0;
     }
     .section-header-apresentation-3{
-      font-size: 0.9em;
+      font-size: 0.8em;
       width: 80%;
     }
   }
@@ -715,11 +721,11 @@ footer{
         width: 80%;
       }
       .section-motivo-apresentation-1 {
-        font-size: 0.9em;
+        font-size: 0.75em;
       }
       .section-motivo-apresentation-2 {
-        font-size: 3em;
-        line-height: 47px;
+        font-size: 1.7em;
+        line-height: 30px;
         margin: 8px 0 15px 0;
       }
       .section-motivo-apresentation-3 {
@@ -782,7 +788,6 @@ footer{
         .section-servicos-content-text-1{
           margin: 18px 0;
           font-size: 0.8em;
-          font-weight: 400;
         }
         .section-servicos-content-text-2{
           font-size: 0.85em;
