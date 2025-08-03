@@ -129,7 +129,7 @@ nav{
     .section-motivo-apresentation-2 {
       color: rgb(25, 25, 25);
       font-size: 4em;
-      margin: 15px 0;
+      margin: 15px 0 20px 0;
       line-height: 60px;
       font-weight: bold;
     }
@@ -140,8 +140,7 @@ nav{
     }
   }
   .section-motivo-quadro{
-    /* width: 40%; */
-    /* background-color: #455EB5; */
+    margin-left: 20px;
 
     .section-motivo-quadro-divisor{
       display: flex;
@@ -169,6 +168,7 @@ nav{
       height: 100%;
       min-height: 130px;
       box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+      margin: 5px 10px;
 
       .section-motivo-quadro-item-icon{
         display: flex;
@@ -222,6 +222,7 @@ nav{
       p{
         margin-bottom: 10px;
         text-indent: 20px;
+        text-align: justify;
       }
     }
   }
@@ -343,22 +344,33 @@ nav{
   padding: 100px 10%;
 
   .section-simplifique-content{
-    .section-simplifique-content-title{
-      max-width: 450px;
-      font-size: 3em;
-      line-height: 50px;
-      font-weight: bold;
-    }
-    .section-simplifique-content-text{
-      max-width: 500px;
-      font-size: 1.2em;
-      font-weight: 500;
-      line-height: 25px;
-      color: rgb(99, 99, 99);
-      margin: 30px 0;
+    display: flex;
+    align-content: center;
+    .section-simplifique-content-header{
+      min-width: fit-content;
+      .section-simplifique-content-header-title{
+        max-width: 450px;
+        font-size: 3em;
+        line-height: 50px;
+        font-weight: bold;
+      }
+      .section-simplifique-content-header-text{
+        max-width: 500px;
+        font-size: 1.2em;
+        font-weight: 500;
+        line-height: 25px;
+        color: rgb(99, 99, 99);
+        margin: 30px 0;
+      }
     }
     .section-simplifique-content-list{
+      display: flex;
+      align-content: center;
+      flex-wrap: wrap;
+      margin-left: 100px;
+
       .section-simplifique-content-list-item {
+        width: 100%;
         display: flex;
         align-items: center;
         margin-bottom: 20px;
@@ -402,16 +414,19 @@ nav{
     }
     .section-identificacao-content-list{
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       width: 100%;
 
       .section-identificacao-content-list-item {
         width: 27%;
+        max-width: 500px;
         height: 500px;
         border-radius: 6px;
         color: white;
         position: relative;
         overflow: hidden;
+        margin: 0 30px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
         img{
           width: 100%;
@@ -422,7 +437,9 @@ nav{
         .section-identificacao-content-list-item-content {
           height: 100%;
           padding: 0 20px 20px 20px;
-          background: linear-gradient(180deg,rgba(0, 0, 0, 0.47) 0%, rgba(0, 0, 0, 0.893) 42%);
+          /* background: linear-gradient(180deg,rgba(0, 0, 0, 0.47) 0%, rgba(0, 0, 0, 0.893) 42%); */
+          background: linear-gradient(1deg,rgba(5, 0, 0, 1) 39%, rgba(0, 0, 0, 0.34) 100%);
+
           display: flex;
           flex-wrap: wrap;
           align-content: end;
@@ -470,6 +487,75 @@ nav{
         font-size: 1em;
         font-weight: 600;
       }
+    }
+  }
+}
+
+/* SECTION CONTATO */
+.section-contato{
+  margin: 100px 0;
+  /* background-color: aqua; */
+  /* background-color: rgba(234, 234, 234, 0.388); */
+  padding: 100px 0;
+
+  .section-contato-content{
+    /* margin-left: 10%; */
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(226, 226, 226, 0.617);
+    padding: 50px 0 50px 100px;
+    border-radius: 0 8px 8px 0;
+
+    .section-contato-content-item{
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+
+      label{
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 0.8em;
+        font-weight: 550;
+        color: rgb(74, 74, 74);
+      }
+      input, select, textarea{
+        width: 100%;
+        border: 1px solid rgba(170, 170, 170, 0.657);
+        border-radius: 6px;
+        font-size: 0.8em;
+      }
+      input{
+        padding-left: 10px;
+        height: 30px;
+        max-width: 300px;
+      }
+      select{
+        max-width: 310px;
+        height: 30px;
+      }
+      textarea{
+        resize: none;
+        height: 100px;
+        max-width: 290px;
+        padding: 10px 10px;
+      }
+    }
+    button { 
+      background-color: #c22f4a;
+      text-decoration: none;
+      color: white;
+      padding: 8px 40px;
+      border-radius: 11px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.85em;
+      font-weight: 500;
+      text-align: center;
+      text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+      user-select: none;
+      -webkit-user-select: none;
+      font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+      margin-left: 190px;
     }
   }
 }
@@ -574,6 +660,36 @@ footer{
             justify-content: center !important;
             padding-right: 00px !important;
             order: 2;
+          }
+        }
+      }
+    }
+  }
+
+  /* SECTION SIMPLIFIQUE */
+  .section-simplifique{
+    padding: 60px 10%;
+
+    .section-simplifique-content{
+      display: block;
+      .section-simplifique-content-header{
+
+        .section-simplifique-content-header-title{
+          font-size: 2.3em;
+          line-height: 45px;
+          
+        }
+        .section-simplifique-content-header-text{
+          font-size: 1em;
+        }
+      }
+      .section-simplifique-content-list{
+        margin-left: 0;
+        .section-simplifique-content-list-item {
+          margin-bottom: 15px;
+          p{
+            font-size: 0.85em;
+            font-weight: 550;
           }
         }
       }
@@ -738,9 +854,6 @@ footer{
         margin: 0;
         flex-wrap: nowrap;
       }
-      .quadro-item-flutuante{
-        margin-bottom: 30px !important;
-      }
       .section-motivo-quadro-item{
         margin: 10px 8px;
         width: 25%;
@@ -816,19 +929,19 @@ footer{
 
   /* SECTION SIMPLIFIQUE */
   .section-simplifique{
-    padding: 60px 10%;
-
     .section-simplifique-content{
-      .section-simplifique-content-title{
-        font-size: 2.5em;
-        line-height: 40px;
-      }
-      .section-simplifique-content-text{
-        font-size: 0.9em;
+      .section-simplifique-content-header{
+
+        .section-simplifique-content-header-title{
+          font-size: 2.5em;
+          line-height: 40px;
+        }
+        .section-simplifique-content-header-text{
+          font-size: 0.9em;
+        }
       }
       .section-simplifique-content-list{
         .section-simplifique-content-list-item {
-          margin-bottom: 15px;
           p{
             font-size: 0.75em;
             font-weight: 550;
