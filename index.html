@@ -23,6 +23,42 @@
 </head>
 
 <script>
+  $(document).ready(function () {
+    $("#enviar-email").on("click", function () {
+      let nome = $("#nome").val();
+      let email = $("#email").val();
+      let interesse = $("#interesse").val();
+      let mensagem = $("#mensagem").val();
+      console.log(nome + " - " + email + " - " + interesse + " - " + mensagem + " - ");
+      let data = {
+        "nome": nome,
+        "email": email,
+        "assunto": interesse,
+        "mensagem": mensagem,
+      }
+      $.ajax({
+        method: "POST",
+        url: "https://suamelhorface.com.br/processa_envia_talkconect.php",
+        data: data,
+      })
+        .done(function (data) {
+        //   if (data.status == true) {
+        //     location.reload();
+        //   } else {
+        //     swal({
+        //       title: "Localizacao",
+        //       text: "Não foi possivel salvar a localização.",
+        //       html: true,
+        //       type: "error",
+        //       timer: 7000,
+        //       allowOutsideClick: true,
+        //     });
+        //     return;
+        //   }
+        console.log(data)
+        });
+    });
+  });
 </script>
 
 <body>
@@ -268,32 +304,40 @@
     </div>
   </div>
 
-  <!-- <div class="section-contato">
+  <div class="section-contato">
     <div class="section-contato-content">
-      <div class="section-contato-content-item">
-        <label for="nome">Seu nome:</label>
-        <input type="text" name="nome" id="nome">
-      </div>
-      <div class="section-contato-content-item">
-        <label for="email">Seu E-Mail:</label>
-        <input type="text" name="email" id="email">
-      </div>
-      <div class="section-contato-content-item">
-        <label for="interesse">Qual o seu interesse?</label>
-        <select name="interesse" id="interesse">
-          <option value="Dúvida">Dúvida</option>
-          <option value="Proposta de Serviço">Proposta de Serviço</option>
-          <option value="Outro">Outro</option>
-        </select>
-      </div>
-      <div class="section-contato-content-item">
-        <label for="nome">Sua mensagem:</label>
-        <textarea name="" id="mensagem"></textarea>
+      <div class="section-contato-content-header">
+        <p>Entre em <span class="text-color">Contato</span></p>
       </div>
 
-      <button id="enviar-email">Enviar</button>
+      <div class="section-contato-content-form">
+        <div class="section-contato-content-form-item" id="item-nome">
+          <label for="nome">Seu nome:</label>
+          <input type="text" name="nome" id="nome">
+        </div>
+        <div class="section-contato-content-form-item" id="item-email">
+          <label for="email">Seu E-Mail:</label>
+          <input type="text" name="email" id="email">
+        </div>
+        <div class="section-contato-content-form-item" id="item-interesse">
+          <label for="interesse">Qual o seu interesse?</label>
+          <select name="interesse" id="interesse">
+            <option value="Dúvida">Dúvida</option>
+            <option value="Proposta de Serviço">Proposta de Serviço</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+        <div class="section-contato-content-form-item" id="item-mensagem">
+          <label for="nome">Sua mensagem:</label>
+          <textarea name="" id="mensagem"></textarea>
+        </div>
+  
+        <button id="enviar-email">Enviar</button>
+      </div>
+
+
     </div>
-  </div> -->
+  </div>
 
   <footer>
     <div class="footer-content">
