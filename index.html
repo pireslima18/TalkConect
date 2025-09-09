@@ -23,13 +23,45 @@
 </head>
 
 <script>
+  function gerarMensagemErrorForm(attribute) {
+    // primeira letra maiúscula, resto minúsculo
+    attribute = attribute.charAt(0).toUpperCase() + attribute.slice(1).toLowerCase();
+    return "<span class=\"error-message\">" +attribute + " não pode ficar em branco.</span>";
+  }
+  function validarCampoInput(attribute) {
+    let elementForm = $("#"+attribute);
+    if (!elementForm.val() || elementForm.val().trim().lenght < 1) {
+      if (!elementForm.hasClass("error-form")) {
+        elementForm.after(gerarMensagemErrorForm(attribute));
+      }
+      elementForm.addClass("error-form")
+    } else {
+      elementForm.removeClass("error-form")
+      elementForm.siblings(".error-message").hide();
+    }
+  }
+
   $(document).ready(function () {
     $("#enviar-email").on("click", function () {
+      if ($("#enviar-email").prop("disabled")) {
+        return;
+      }
+      $("#enviar-email").prop("disabled", true);
+
       let nome = $("#nome").val();
       let email = $("#email").val();
       let interesse = $("#interesse").val();
       let mensagem = $("#mensagem").val();
       console.log(nome + " - " + email + " - " + interesse + " - " + mensagem + " - ");
+
+      validarCampoInput("nome");
+      validarCampoInput("email");
+      
+      if ($(".error-form").length) {
+        $("#enviar-email").prop("disabled", false);
+        return;
+      }
+
       let data = {
         "nome": nome,
         "email": email,
@@ -42,20 +74,11 @@
         data: data,
       })
         .done(function (data) {
-        //   if (data.status == true) {
-        //     location.reload();
-        //   } else {
-        //     swal({
-        //       title: "Localizacao",
-        //       text: "Não foi possivel salvar a localização.",
-        //       html: true,
-        //       type: "error",
-        //       timer: 7000,
-        //       allowOutsideClick: true,
-        //     });
-        //     return;
-        //   }
-        console.log(data)
+          if (data.success == true) {
+            $(".section-contato-content-form-message").addClass("section-contato-content-form-message-active");
+          } else {
+            alert("Error ao enviar email!")
+          }
         });
     });
   });
@@ -68,7 +91,7 @@
         <img src="images/logo.jpeg" alt="Logo TalkConect">
       </div>
       <div class="navbar-container-options">
-        <a class="navbar-container-options-botao" href="#">Entre em Contato</a>
+        <a class="navbar-container-options-botao" href="#section-contato">Entre em Contato</a>
       </div>
     </div>
   </nav>
@@ -304,7 +327,7 @@
     </div>
   </div>
 
-  <!-- <div class="section-contato">
+  <div class="section-contato" id="section-contato">
     <div class="section-contato-content">
       <div class="section-contato-content-header">
         <p>Entre em <span class="text-color">Contato</span></p>
@@ -313,11 +336,11 @@
       <div class="section-contato-content-form">
         <div class="section-contato-content-form-item" id="item-nome">
           <label for="nome">Seu nome:</label>
-          <input type="text" name="nome" id="nome">
+          <input type="text" name="nome" id="nome" onchange="validarCampoInput('nome')">
         </div>
         <div class="section-contato-content-form-item" id="item-email">
           <label for="email">Seu E-Mail:</label>
-          <input type="text" name="email" id="email">
+          <input type="text" name="email" id="email" onchange="validarCampoInput('email')">
         </div>
         <div class="section-contato-content-form-item" id="item-interesse">
           <label for="interesse">Qual o seu interesse?</label>
@@ -333,11 +356,19 @@
         </div>
   
         <button id="enviar-email">Enviar</button>
+
+        <div class="section-contato-content-form-message">
+          <div class="section-contato-content-form-message-icon">
+            <i class="fa-solid fa-paper-plane text-color"></i>
+          </div>
+          <p class="section-contato-content-form-message-title">Mensagem enviada com <span>sucesso</span>!</p>
+          <p class="section-contato-content-form-message-text">Logo mais entraremos em contato pelo contato fornecido.</p>
+        </div>
       </div>
 
 
     </div>
-  </div> -->
+  </div>
 
   <footer>
     <div class="footer-content">
